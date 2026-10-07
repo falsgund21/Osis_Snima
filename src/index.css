@@ -1,0 +1,154 @@
+/* Bootstrap CSS & Icons */
+@import "bootstrap/dist/css/bootstrap.min.css";
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
+:root {
+  --eosis-primary: #1e3a8a;
+  --eosis-primary-dark: #172554;
+  --eosis-accent: #2563eb;
+  --eosis-bg: #f8fafc;
+  --eosis-sidebar: #0f172a;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--eosis-bg);
+  color: #1e293b;
+  min-height: 100vh;
+}
+
+/* Tabular Numerals for counts and percentages */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+
+/* Custom Card Styles */
+.card-clean {
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  transition: all 0.2s ease-in-out;
+}
+
+.card-clean:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+/* Custom Primary Button */
+.btn-primary {
+  background-color: #2563eb;
+  border-color: #2563eb;
+  font-weight: 500;
+  border-radius: 8px;
+  padding: 0.5rem 1.25rem;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+  background-color: #1d4ed8;
+  border-color: #1d4ed8;
+}
+
+/* Admin Sidebar */
+.admin-sidebar {
+  width: 260px;
+  min-height: 100vh;
+  background: var(--eosis-sidebar);
+  color: #94a3b8;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.admin-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: all 0.15s ease;
+  margin-bottom: 4px;
+}
+
+.admin-nav-link:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+}
+
+.admin-nav-link.router-link-active,
+.admin-nav-link.active {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+/* Student Voting Cards */
+.candidate-card {
+  border: 2px solid transparent;
+  border-radius: 16px;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.candidate-card:hover {
+  transform: translateY(-4px);
+  border-color: #93c5fd;
+  box-shadow: 0 12px 24px -8px rgba(37, 99, 235, 0.18);
+}
+
+.candidate-number-badge {
+  width: 44px;
+  height: 44px;
+  background: #1e3a8a;
+  color: white;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+/* Print Styling */
+@media print {
+  @page {
+    size: A4;
+    margin: 15mm 20mm;
+  }
+  .no-print, .d-print-none, .admin-sidebar, header, nav, .btn, .alert {
+    display: none !important;
+  }
+  .d-print-block {
+    display: block !important;
+  }
+  .d-print-flex {
+    display: flex !important;
+  }
+  .d-print-table {
+    display: table !important;
+  }
+  main, .flex-grow-1, .admin-main {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    background: transparent !important;
+  }
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 12pt;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  .card {
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+  }
+}
